@@ -247,6 +247,14 @@ const [filteredSubscribers, setFilteredSubscribers] = useState<Subscriber[]>([])
           )}
         </div>
       </div>
+      {/* Footer */}
+      <footer className="mt-16 py-6" style={{ borderColor: currentTheme.tableBorder }}>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <p className={`text-center text-sm ${currentTheme.textSecondary}`}>
+            Developed by <span className="font-semibold text-rose-400">COS Devs</span>
+          </p>
+        </div>
+      </footer>
     </div>
   );
 };
