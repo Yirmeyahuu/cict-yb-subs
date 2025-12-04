@@ -2,7 +2,7 @@
 
 <div align="center">
   
-  ![CICT Yearbook](public/cictybthumbnail.png)
+  ![CICT Yearbook](cict-yb-subs/cictyb-subs/cictybthumbnail.png)
   
   **A sleek and modern subscriber list application for CICT Yearbook**
   
