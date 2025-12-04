@@ -10,6 +10,7 @@
   [![TypeScript](https://img.shields.io/badge/TypeScript-5.6-3178c6?style=for-the-badge&logo=typescript)](https://www.typescriptlang.org/)
   [![Tailwind CSS](https://img.shields.io/badge/Tailwind-3.4-38bdf8?style=for-the-badge&logo=tailwind-css)](https://tailwindcss.com/)
   [![Vite](https://img.shields.io/badge/Vite-5.4-646cff?style=for-the-badge&logo=vite)](https://vitejs.dev/)
+  [![GSAP](https://img.shields.io/badge/GSAP-3.12-88CE02?style=for-the-badge&logo=greensock)](https://greensock.com/gsap/)
 
 </div>
 
@@ -50,7 +51,7 @@
 
 ```bash
 # Clone the repository
-git clone <repository-url>
+git clone https://github.com/Yirmeyahuu/cict-yb-subs.git
 
 # Navigate to project directory
 cd cictyb-subs
@@ -85,46 +86,6 @@ npm run preview
 | **GSAP** | Animations |
 | **React Router** | Navigation |
 
----
-
-## 📁 Project Structure
-
-```
-cictyb-subs/
-├── src/
-│   ├── components/
-│   │   └── SubscriberList.tsx    # Main component
-│   ├── data/
-│   │   └── subscribers.json       # Subscriber data
-│   ├── types/
-│   │   └── index.ts               # TypeScript types
-│   ├── App.tsx                    # Root component
-│   └── main.tsx                   # Entry point
-├── public/
-│   ├── CICTrelicon.svg           # Favicon
-│   └── cictybthumbnail.png       # Social media thumbnail
-└── index.html                     # HTML template
-```
-
----
-
-## 🎨 Color Palette
-
-### Dark Mode
-```
-Background: #0C0C0C
-Primary:    #1a1a1a
-Border:     #2a2a2a
-Accent:     #ef4444 (Rose)
-```
-
-### Light Mode
-```
-Background: #F9F8F6
-Primary:    #ffffff
-Border:     #dee2e6
-Accent:     #ef4444 (Rose)
-```
 
 ---
 
@@ -158,23 +119,6 @@ Edit `src/data/subscribers.json`:
 ]
 ```
 
-### Customizing Theme
-
-Modify `theme` object in `SubscriberList.tsx`:
-
-```typescript
-const theme = {
-  dark: {
-    bg: '#0C0C0C',
-    // ... other colors
-  },
-  light: {
-    bg: '#F9F8F6',
-    // ... other colors
-  }
-};
-```
-
 ---
 
 ## 🌐 Deployment
@@ -200,17 +144,6 @@ npm run build
 
 ---
 
-## 🎯 Features Roadmap
-
-- [ ] Export to PDF/CSV
-- [ ] Pagination for large lists
-- [ ] Advanced filtering (by course, year)
-- [ ] User authentication
-- [ ] Admin panel for managing subscribers
-- [ ] Email notifications
-
----
-
 ## 🤝 Contributing
 
 Contributions are welcome! Please feel free to submit a Pull Request.
@@ -231,7 +164,7 @@ This project is open source and available under the [MIT License](LICENSE).
 
 ## 👥 Credits
 
-**Developer:** CICT Web Development Team  
+**Developer:** COS Devs
 **Font:** [Geist by Vercel](https://vercel.com/font)  
 **Icons:** Heroicons  
 **Animations:** GSAP
@@ -241,15 +174,13 @@ This project is open source and available under the [MIT License](LICENSE).
 ## 📧 Contact
 
 For questions or support, please reach out to:
-- Email: cict@example.com
-- Website: [CICT Portal](https://cict.example.com)
+- Email: cosdevsph@outlook.ph
+- Website: https://cosdevsph.vercel.app/
 
 ---
 
 <div align="center">
   
-  **Made with ❤️ by CICT Students**
-  
-  ⭐ Star this repo if you find it helpful!
+  **Developed by COS Devs**
 
 </div>
