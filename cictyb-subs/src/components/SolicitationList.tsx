@@ -55,7 +55,10 @@ const SolicitationList = () => {
 
   // Calculate total solicitation letters acquired
   const totalAcquired = solicits.reduce((sum, solicit) => {
-    return sum + parseInt(solicit.solicitationAcquired);
+    const acquired = typeof solicit.solicitationAcquired === 'string' 
+      ? parseInt(solicit.solicitationAcquired, 10) 
+      : solicit.solicitationAcquired;
+    return sum + acquired;
   }, 0);
 
   const highlightText = (text: string, query: string) => {
