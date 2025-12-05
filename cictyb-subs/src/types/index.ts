@@ -10,7 +10,7 @@ export interface Solicit {
   name: string;
   course: string;
   trackingNumbers?: number[];
-  solicitationAcquired: number | string;
-  solicitationReturned: number | string;
+  solicitationAcquired: number;
+  solicitationReturned: number;
   subscriptionStatus: string;
 }
