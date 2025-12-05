@@ -53,6 +53,11 @@ const SolicitationList = () => {
     setCurrentPage(1);
   }, [searchQuery, solicits]);
 
+  // Calculate total solicitation letters acquired
+  const totalAcquired = solicits.reduce((sum, solicit) => {
+    return sum + parseInt(solicit.solicitationAcquired);
+  }, 0);
+
   const highlightText = (text: string, query: string) => {
     if (!query) return text;
     const parts = text.split(new RegExp(`(${query})`, 'gi'));
@@ -198,9 +203,15 @@ const SolicitationList = () => {
           <h1 className={`text-5xl sm:text-6xl font-bold mb-4 tracking-tight ${currentTheme.text}`}>
             Solicitation List
           </h1>
-          <p className={`text-lg ${currentTheme.textSecondary}`}>
-            Total Students: <span className="font-semibold text-rose-400">{solicits.length}</span>
-          </p>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8">
+            <p className={`text-lg ${currentTheme.textSecondary}`}>
+              Total Students: <span className="font-semibold text-rose-400">{solicits.length}</span>
+            </p>
+            <div className={`hidden sm:block w-px h-6 ${isDarkMode ? 'bg-gray-700' : 'bg-gray-300'}`}></div>
+            <p className={`text-lg ${currentTheme.textSecondary}`}>
+              Total Acquired: <span className="font-semibold text-blue-400">{totalAcquired}</span>
+            </p>
+          </div>
         </div>
 
         <div ref={searchRef} className="mb-10">
@@ -227,6 +238,7 @@ const SolicitationList = () => {
                       <th className={`px-6 py-4 text-left text-xs font-semibold uppercase tracking-wider ${currentTheme.textSecondary}`}>ID</th>
                       <th className={`px-6 py-4 text-left text-xs font-semibold uppercase tracking-wider ${currentTheme.textSecondary}`}>Name</th>
                       <th className={`px-6 py-4 text-left text-xs font-semibold uppercase tracking-wider ${currentTheme.textSecondary}`}>Course</th>
+                      <th className={`px-6 py-4 text-left text-xs font-semibold uppercase tracking-wider ${currentTheme.textSecondary}`}>Tracking Numbers</th>
                       <th className={`px-6 py-4 text-left text-xs font-semibold uppercase tracking-wider ${currentTheme.textSecondary}`}>Acquired</th>
                       <th className={`px-6 py-4 text-left text-xs font-semibold uppercase tracking-wider ${currentTheme.textSecondary}`}>Returned</th>
                       <th className={`px-6 py-4 text-left text-xs font-semibold uppercase tracking-wider ${currentTheme.textSecondary}`}>Status</th>
@@ -243,6 +255,19 @@ const SolicitationList = () => {
                         <td className={`px-6 py-4 whitespace-nowrap text-sm ${currentTheme.textSecondary}`}>{solicit.id}</td>
                         <td className={`px-6 py-4 whitespace-nowrap text-sm font-medium ${currentTheme.text}`}>{highlightText(solicit.name, searchQuery)}</td>
                         <td className="px-6 py-4 whitespace-nowrap text-sm text-rose-400">{solicit.course}</td>
+                        <td className={`px-6 py-4 text-sm ${currentTheme.textSecondary}`}>
+                          {solicit.trackingNumbers && solicit.trackingNumbers.length > 0 ? (
+                            <div className="flex flex-wrap gap-1">
+                              {solicit.trackingNumbers.map((num, index) => (
+                                <span key={index} className="px-2 py-0.5 text-xs font-medium rounded bg-blue-500/20 text-blue-400">
+                                  {num}
+                                </span>
+                              ))}
+                            </div>
+                          ) : (
+                            <span className={currentTheme.textTertiary}>—</span>
+                          )}
+                        </td>
                         <td className={`px-6 py-4 whitespace-nowrap text-sm ${currentTheme.textSecondary}`}>{solicit.solicitationAcquired}</td>
                         <td className={`px-6 py-4 whitespace-nowrap text-sm ${currentTheme.textSecondary}`}>{solicit.solicitationReturned}</td>
                         <td className={`px-6 py-4 whitespace-nowrap text-sm`}>
@@ -277,6 +302,21 @@ const SolicitationList = () => {
                     </div>
                     <div className="space-y-2">
                       <div className="flex items-center"><span className="w-2 h-2 bg-rose-400 rounded-full mr-2"></span><span className="text-sm text-rose-400 font-medium">{solicit.course}</span></div>
+                      {solicit.trackingNumbers && solicit.trackingNumbers.length > 0 && (
+                        <div className="flex items-start">
+                          <span className="w-2 h-2 bg-yellow-400 rounded-full mr-2 mt-1.5"></span>
+                          <div>
+                            <span className={`text-xs ${currentTheme.textTertiary}`}>Tracking Numbers:</span>
+                            <div className="flex flex-wrap gap-1 mt-1">
+                              {solicit.trackingNumbers.map((num, index) => (
+                                <span key={index} className="px-2 py-0.5 text-xs font-medium rounded bg-blue-500/20 text-blue-400">
+                                  {num}
+                                </span>
+                              ))}
+                            </div>
+                          </div>
+                        </div>
+                      )}
                       <div className="flex items-center justify-between">
                         <div className="flex items-center"><span className="w-2 h-2 bg-blue-400 rounded-full mr-2"></span><span className={`text-sm ${currentTheme.textSecondary}`}>Acquired: {solicit.solicitationAcquired}</span></div>
                         <div className="flex items-center"><span className="w-2 h-2 bg-purple-400 rounded-full mr-2"></span><span className={`text-sm ${currentTheme.textSecondary}`}>Returned: {solicit.solicitationReturned}</span></div>
