@@ -356,7 +356,81 @@ const SubscriberList = () => {
         {/* Pagination Controls */}
         {totalPages > 1 && (
           <div className="flex items-center justify-center gap-1.5 mt-8">
-            {/* ...existing pagination code... */}
+            {/* Previous Button */}
+            <button
+              onClick={() => setCurrentPage(prev => Math.max(prev - 1, 1))}
+              disabled={currentPage === 1}
+              className={`p-1.5 rounded-lg transition-all duration-200 disabled:opacity-30 disabled:cursor-not-allowed cursor-pointer ${
+                currentPage === 1 ? '' : 'hover:bg-rose-500/20 hover:border-rose-500'
+              }`}
+              style={{ 
+                backgroundColor: currentTheme.inputBg,
+                color: currentTheme.textSecondary,
+                border: `1px solid ${currentTheme.inputBorder}`
+              }}
+              aria-label="Previous page"
+            >
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+              </svg>
+            </button>
+
+            {/* Page Numbers */}
+            <div className="flex items-center gap-1.5">
+              {Array.from({ length: Math.min(7, totalPages) }, (_, i) => {
+                let pageNumber;
+                
+                if (totalPages <= 7) {
+                  pageNumber = i + 1;
+                } else if (currentPage <= 4) {
+                  pageNumber = i + 1;
+                } else if (currentPage >= totalPages - 3) {
+                  pageNumber = totalPages - 6 + i;
+                } else {
+                  pageNumber = currentPage - 3 + i;
+                }
+
+                const isActive = pageNumber === currentPage;
+
+                return (
+                  <button
+                    key={pageNumber}
+                    onClick={() => setCurrentPage(pageNumber)}
+                    className={`w-8 h-8 rounded-full text-xs font-medium cursor-pointer transition-all duration-200 ${
+                      isActive 
+                        ? 'shadow-lg scale-105' 
+                        : 'hover:bg-rose-500/20 hover:border-rose-500 hover:text-rose-500'
+                    }`}
+                    style={{
+                      backgroundColor: isActive ? '#8B9DC3' : currentTheme.inputBg,
+                      color: isActive ? '#ffffff' : '#ef4444',
+                      border: isActive ? 'none' : `1px solid ${currentTheme.inputBorder}`
+                    }}
+                  >
+                    {pageNumber}
+                  </button>
+                );
+              })}
+            </div>
+
+            {/* Next Button */}
+            <button
+              onClick={() => setCurrentPage(prev => Math.min(prev + 1, totalPages))}
+              disabled={currentPage === totalPages}
+              className={`p-1.5 rounded-lg transition-all duration-200 disabled:opacity-30 disabled:cursor-not-allowed cursor-pointer ${
+                currentPage === totalPages ? '' : 'hover:bg-rose-500/20 hover:border-rose-500'
+              }`}
+              style={{ 
+                backgroundColor: currentTheme.inputBg,
+                color: currentTheme.textSecondary,
+                border: `1px solid ${currentTheme.inputBorder}`
+              }}
+              aria-label="Next page"
+            >
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              </svg>
+            </button>
           </div>
         )}
       </div>
