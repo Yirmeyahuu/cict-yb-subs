@@ -129,7 +129,7 @@ const SolicitationList = () => {
           {/* Desktop Navigation Link */}
           <button
             onClick={() => navigate('/')}
-            className={`hidden md:block font-medium transition-all duration-200 hover:opacity-80 border-b-2 border-transparent hover:border-rose-400 pb-1 ${currentTheme.text}`}
+            className={`hidden md:block cursor-pointer font-medium transition-all duration-200 hover:opacity-80 border-b-2 border-transparent hover:border-rose-400 pb-1 ${currentTheme.text}`}
           >
             View Subscribers
           </button>
