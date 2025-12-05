@@ -1,82 +1,394 @@
 [
   {
-    "id": "22-3215-813",
-    "name": "Alyana Kate C. Abelada",
+    "id": "22-3030-902",
+    "name": "Abela, Von Czar D.",
     "course": "Bachelor of Science in Information Technology",
-    "solicitationAcquired": 5,
-    "solicitationReturned": 5,
-    "subscriptionStatus": "Subscribed"
-  },
-  {
-    "id": "20-0326-539",
-    "name": "Gian Aboganda",
-    "course": "Bachelor of Science in Computer Science",
-    "solicitationAcquired": 5,
-    "solicitationReturned": 3,
-    "subscriptionStatus": "Not Subscribed"
-  },
-  {
-    "id": "22-1464-252",
-    "name": "Well Ann V. Abunto",
-    "course": "Bachelor of Science in Information Technology",
-    "solicitationAcquired": 5,
-    "solicitationReturned": 5,
-    "subscriptionStatus": "Subscribed"
-  },
-  {
-    "id": "22-2267-145",
-    "name": "Jim Christian F. Ayco",
-    "course": "Bachelor of Science in Information Technology",
-    "solicitationAcquired": 5,
+    "solicitationAcquired": 2,
     "solicitationReturned": 0,
-    "subscriptionStatus": "Not Subscribed"
+    "subscriptionStatus": "Subscribed"
+  },
+  {
+    "id": "22-1149-644",
+    "name": "Astrologo, Kiah A.",
+    "course": "Bachelor of Science in Information Technology",
+    "solicitationAcquired": 1,
+    "solicitationReturned": 0,
+    "subscriptionStatus": "Subscribed"
+  },
+  {
+    "id": "22-1754-371",
+    "name": "Bacister, Pretzel C.",
+    "course": "Bachelor of Science in Information Technology",
+    "solicitationAcquired": 2,
+    "solicitationReturned": 0,
+    "subscriptionStatus": "Subscribed"
   },
   {
     "id": "22-2483-519",
-    "name": "Lyl S. Baligasa",
+    "name": "Baligasa, Lyl S.",
     "course": "Bachelor of Science in Information Technology",
-    "solicitationAcquired": 5,
-    "solicitationReturned": 5,
+    "solicitationAcquired": 2,
+    "solicitationReturned": 0,
+    "subscriptionStatus": "Subscribed"
+  },
+  {
+    "id": "22-2036-362",
+    "name": "Bangcaray, Liza Mae S.",
+    "course": "Bachelor of Science in Information Technology",
+    "solicitationAcquired": 2,
+    "solicitationReturned": 0,
+    "subscriptionStatus": "Subscribed"
+  },
+  {
+    "id": "22-2461-308",
+    "name": "Barrera, Wenard Roy F.",
+    "course": "Bachelor of Science in Computer Science",
+    "solicitationAcquired": 2,
+    "solicitationReturned": 0,
+    "subscriptionStatus": "Subscribed"
+  },
+  {
+    "id": "22-2639-849",
+    "name": "Bautista, Arby U.",
+    "course": "Bachelor of Science in Information Technology",
+    "solicitationAcquired": 1,
+    "solicitationReturned": 0,
     "subscriptionStatus": "Subscribed"
   },
   {
     "id": "22-1076-453",
-    "name": "John Eric G. Bayer",
+    "name": "Bayer, John Eric G.",
     "course": "Bachelor of Science in Computer Science",
-    "solicitationAcquired": 5,
-    "solicitationReturned": 5,
+    "solicitationAcquired": 2,
+    "solicitationReturned": 0,
     "subscriptionStatus": "Subscribed"
   },
   {
-    "id": "21-2775-903",
-    "name": "Mark Jason E. Cruz",
+    "id": "22-0540-281",
+    "name": "Bernades, Marc P.",
+    "course": "Bachelor of Science in Information Technology",
+    "solicitationAcquired": 2,
+    "solicitationReturned": 0,
+    "subscriptionStatus": "Subscribed"
+  },
+  {
+    "id": "22-1748-806",
+    "name": "Bulabos, Rafael",
+    "course": "Bachelor of Science in Information Technology",
+    "solicitationAcquired": 2,
+    "solicitationReturned": 0,
+    "subscriptionStatus": "Subscribed"
+  },
+  {
+    "id": "22-1755-612",
+    "name": "Camarines, Mariz D.",
+    "course": "Bachelor of Science in Information Technology",
+    "solicitationAcquired": 2,
+    "solicitationReturned": 0,
+    "subscriptionStatus": "Subscribed"
+  },
+  {
+    "id": "22-1791-701",
+    "name": "Cientos, Rona Joy P.",
+    "course": "Bachelor of Science in Information Technology",
+    "solicitationAcquired": 2,
+    "solicitationReturned": 0,
+    "subscriptionStatus": "Subscribed"
+  },
+  {
+    "id": "22-2897-730",
+    "name": "Cuambot, Jesrel P.",
+    "course": "Bachelor of Science in Information Technology",
+    "solicitationAcquired": 1,
+    "solicitationReturned": 0,
+    "subscriptionStatus": "Subscribed"
+  },
+  {
+    "id": "22-3214-736",
+    "name": "Cundangan, Joshua M.",
+    "course": "Bachelor of Science in Information Technology",
+    "solicitationAcquired": 2,
+    "solicitationReturned": 0,
+    "subscriptionStatus": "Subscribed"
+  },
+  {
+    "id": "22-0703-498",
+    "name": "Demapendan, Khen Y.",
+    "course": "Bachelor of Science in Information Technology",
+    "solicitationAcquired": 2,
+    "solicitationReturned": 0,
+    "subscriptionStatus": "Subscribed"
+  },
+  {
+    "id": "17-0893-616",
+    "name": "Diopol, Rusty V.",
+    "course": "Bachelor of Science in Information Technology",
+    "solicitationAcquired": 2,
+    "solicitationReturned": 0,
+    "subscriptionStatus": "Subscribed"
+  },
+  {
+    "id": "20-0898-214",
+    "name": "Embang, Julian Kurt G.",
+    "course": "Bachelor of Science in Information Technology",
+    "solicitationAcquired": 2,
+    "solicitationReturned": 0,
+    "subscriptionStatus": "Subscribed"
+  },
+  {
+    "id": "20-0092-130",
+    "name": "Enlangan, Jessie D.",
+    "course": "Bachelor of Science in Information Technology",
+    "solicitationAcquired": 2,
+    "solicitationReturned": 0,
+    "subscriptionStatus": "Subscribed"
+  },
+  {
+    "id": "22-4160-907",
+    "name": "Escobido, Antonette B.",
+    "course": "Bachelor of Science in Information Technology",
+    "solicitationAcquired": 2,
+    "solicitationReturned": 0,
+    "subscriptionStatus": "Not Subscribed"
+  },
+  {
+    "id": "22-0754-289",
+    "name": "Espino, Cherry Anne",
     "course": "Bachelor of Science in Information Technology",
     "solicitationAcquired": 3,
-    "solicitationReturned": 3,
-    "subscriptionStatus": "Subscribed"
-  },
-  {
-    "id": "22-1656-380",
-    "name": "Mike Lourence O. Damole",
-    "course": "Bachelor of Science in Computer Science",
-    "solicitationAcquired": 5,
-    "solicitationReturned": 2,
+    "solicitationReturned": 0,
     "subscriptionStatus": "Not Subscribed"
   },
   {
     "id": "20-0307-132",
-    "name": "Clark Jim A. Gabiota",
+    "name": "Gabiota, Clark Jim A.",
     "course": "Bachelor of Science in Computer Science",
-    "solicitationAcquired": 5,
-    "solicitationReturned": 5,
+    "solicitationAcquired": 2,
+    "solicitationReturned": 0,
     "subscriptionStatus": "Subscribed"
   },
   {
-    "id": "22-0958-473",
-    "name": "Edge G. Gonzaga",
-    "course": "Bachelor of Science in Computer Science",
-    "solicitationAcquired": 5,
-    "solicitationReturned": 5,
+    "id": "22-2608-588",
+    "name": "Gabrido, Mariane E.",
+    "course": "Bachelor of Science in Information Technology",
+    "solicitationAcquired": 1,
+    "solicitationReturned": 0,
+    "subscriptionStatus": "Subscribed"
+  },
+  {
+    "id": "22-3006-145",
+    "name": "Gonzaga, Jessa V.",
+    "course": "Bachelor of Science in Information Technology",
+    "solicitationAcquired": 2,
+    "solicitationReturned": 0,
+    "subscriptionStatus": "Subscribed"
+  },
+  {
+    "id": "22-0989-552",
+    "name": "Gorre, Jan Rey U.",
+    "course": "Bachelor of Science in Information Technology",
+    "solicitationAcquired": 1,
+    "solicitationReturned": 0,
+    "subscriptionStatus": "Not Subscribed"
+  },
+  {
+    "id": "22-2543-113",
+    "name": "Goza, Rommel Angelo T.",
+    "course": "Bachelor of Science in Information Technology",
+    "solicitationAcquired": 1,
+    "solicitationReturned": 0,
+    "subscriptionStatus": "Subscribed"
+  },
+  {
+    "id": "22-1526-947",
+    "name": "Guardario, Mariel A.",
+    "course": "Bachelor of Science in Information Technology",
+    "solicitationAcquired": 2,
+    "solicitationReturned": 0,
+    "subscriptionStatus": "Subscribed"
+  },
+  {
+    "id": "22-3120-308",
+    "name": "Guevarra, Krystyl Kaye L.",
+    "course": "Bachelor of Science in Information Technology",
+    "solicitationAcquired": 2,
+    "solicitationReturned": 0,
+    "subscriptionStatus": "Subscribed"
+  },
+  {
+    "id": "22-3247-130",
+    "name": "Hausan, Alteyah Marree D.",
+    "course": "Bachelor of Science in Information Technology",
+    "solicitationAcquired": 1,
+    "solicitationReturned": 0,
+    "subscriptionStatus": "Subscribed"
+  },
+  {
+    "id": "22-2893-171",
+    "name": "Loreno, John P.",
+    "course": "Bachelor of Science in Information Technology",
+    "solicitationAcquired": 2,
+    "solicitationReturned": 0,
+    "subscriptionStatus": "Subscribed"
+  },
+  {
+    "id": "22-1594-517",
+    "name": "Madrid, James Bernard A.",
+    "course": "Bachelor of Science in Information Technology",
+    "solicitationAcquired": 1,
+    "solicitationReturned": 0,
+    "subscriptionStatus": "Not Subscribed"
+  },
+  {
+    "id": "22-2978-421",
+    "name": "Malunhao, Jane Brylle G.",
+    "course": "Bachelor of Science in Information Technology",
+    "solicitationAcquired": 2,
+    "solicitationReturned": 0,
+    "subscriptionStatus": "Subscribed"
+  },
+  {
+    "id": "22-0736-854",
+    "name": "Monlan, Princess M.",
+    "course": "Bachelor of Science in Information Technology",
+    "solicitationAcquired": 2,
+    "solicitationReturned": 0,
+    "subscriptionStatus": "Subscribed"
+  },
+  {
+    "id": "22-1557-300",
+    "name": "Montealegre, Alexandra Ysabel B.",
+    "course": "Bachelor of Science in Information Technology",
+    "solicitationAcquired": 2,
+    "solicitationReturned": 0,
+    "subscriptionStatus": "Subscribed"
+  },
+  {
+    "id": "20-0029-294",
+    "name": "Nacion, Princess Ryl P.",
+    "course": "Bachelor of Science in Information Technology",
+    "solicitationAcquired": 3,
+    "solicitationReturned": 0,
+    "subscriptionStatus": "Subscribed"
+  },
+  {
+    "id": "21-1844-583",
+    "name": "Nillos, Ghydhen Lei C.",
+    "course": "Bachelor of Science in Information Technology",
+    "solicitationAcquired": 2,
+    "solicitationReturned": 0,
+    "subscriptionStatus": "Subscribed"
+  },
+  {
+    "id": "22-1744-112",
+    "name": "Nim, Nathaniel G.",
+    "course": "Bachelor of Science in Information Technology",
+    "solicitationAcquired": 2,
+    "solicitationReturned": 0,
+    "subscriptionStatus": "Not Subscribed"
+  },
+  {
+    "id": "21-2780-723",
+    "name": "Nombre, Joshua June C.",
+    "course": "Bachelor of Science in Information Technology",
+    "solicitationAcquired": 2,
+    "solicitationReturned": 0,
+    "subscriptionStatus": "Subscribed"
+  },
+  {
+    "id": "22-3243-256",
+    "name": "Obligado, Adrian G.",
+    "course": "Bachelor of Science in Information Technology",
+    "solicitationAcquired": 2,
+    "solicitationReturned": 0,
+    "subscriptionStatus": "Subscribed"
+  },
+  {
+    "id": "20-0090-417",
+    "name": "Ocalinas, Ian Paulo C.",
+    "course": "Bachelor of Science in Information Technology",
+    "solicitationAcquired": 1,
+    "solicitationReturned": 1,
+    "subscriptionStatus": "Subscribed"
+  },
+  {
+    "id": "22-0644-718",
+    "name": "Orcena, Raphael L.",
+    "course": "Bachelor of Science in Information Technology",
+    "solicitationAcquired": 2,
+    "solicitationReturned": 0,
+    "subscriptionStatus": "Subscribed"
+  },
+  {
+    "id": "22-2066-776",
+    "name": "Pagubo, Leah May D.",
+    "course": "Bachelor of Science in Information Technology",
+    "solicitationAcquired": 2,
+    "solicitationReturned": 0,
+    "subscriptionStatus": "Subscribed"
+  },
+  {
+    "id": "22-1633-467",
+    "name": "Pagunsan, Dwen John Y.",
+    "course": "Bachelor of Science in Information Technology",
+    "solicitationAcquired": 2,
+    "solicitationReturned": 1,
+    "subscriptionStatus": "Subscribed"
+  },
+  {
+    "id": "22-3201-954",
+    "name": "Parreñas, Bhea Nathalie L.",
+    "course": "Bachelor of Science in Information Technology",
+    "solicitationAcquired": 2,
+    "solicitationReturned": 0,
+    "subscriptionStatus": "Subscribed"
+  },
+  {
+    "id": "22-4045-716",
+    "name": "Quimzon, Earl John A.",
+    "course": "Bachelor of Science in Information Technology",
+    "solicitationAcquired": 2,
+    "solicitationReturned": 0,
+    "subscriptionStatus": "Subscribed"
+  },
+  {
+    "id": "22-1697-299",
+    "name": "Ramos, Grant Kelly F.",
+    "course": "Bachelor of Science in Information Technology",
+    "solicitationAcquired": 2,
+    "solicitationReturned": 0,
+    "subscriptionStatus": "Subscribed"
+  },
+  {
+    "id": "22-1800-676",
+    "name": "Regalado, Chryss George V.",
+    "course": "Bachelor of Science in Information Technology",
+    "solicitationAcquired": 2,
+    "solicitationReturned": 1,
+    "subscriptionStatus": "Subscribed"
+  },
+  {
+    "id": "22-3244-954",
+    "name": "Romano, John Lloyd O.",
+    "course": "Bachelor of Science in Information Technology",
+    "solicitationAcquired": 2,
+    "solicitationReturned": 0,
+    "subscriptionStatus": "Not Subscribed"
+  },
+  {
+    "id": "22-2866-123",
+    "name": "Sabio, Andrie Miguel U.",
+    "course": "Bachelor of Science in Information Technology",
+    "solicitationAcquired": 1,
+    "solicitationReturned": 0,
+    "subscriptionStatus": "Not Subscribed"
+  },
+  {
+    "id": "20-0071-345",
+    "name": "Santos, Yuri Dominyq A.",
+    "course": "Bachelor of Science in Information Technology",
+    "solicitationAcquired": 1,
+    "solicitationReturned": 0,
     "subscriptionStatus": "Subscribed"
   }
 ]
