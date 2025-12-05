@@ -151,6 +151,15 @@ const SubscriberList = () => {
           </h1>
         </div>
 
+        <div ref={headerRef} className="text-center mb-8">
+          <h1 className={`text-5xl sm:text-6xl font-bold mb-4 tracking-tight ${currentTheme.text}`}>
+            CICT Yearbook Subscribers
+          </h1>
+          <p className={`text-lg ${currentTheme.textSecondary}`}>
+            Total Subscribers: <span className="font-semibold text-rose-400">{subscribers.length}</span>
+          </p>
+        </div>
+
         <div ref={searchRef} className="mb-10">
           <div className="max-w-2xl mx-auto">
             <input
