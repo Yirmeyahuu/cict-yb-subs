@@ -1,0 +1,82 @@
+[
+  {
+    "id": "22-3215-813",
+    "name": "Alyana Kate C. Abelada",
+    "course": "Bachelor of Science in Information Technology",
+    "solicitationAcquired": 5,
+    "solicitationReturned": 5,
+    "subscriptionStatus": "Subscribed"
+  },
+  {
+    "id": "20-0326-539",
+    "name": "Gian Aboganda",
+    "course": "Bachelor of Science in Computer Science",
+    "solicitationAcquired": 5,
+    "solicitationReturned": 3,
+    "subscriptionStatus": "Not Subscribed"
+  },
+  {
+    "id": "22-1464-252",
+    "name": "Well Ann V. Abunto",
+    "course": "Bachelor of Science in Information Technology",
+    "solicitationAcquired": 5,
+    "solicitationReturned": 5,
+    "subscriptionStatus": "Subscribed"
+  },
+  {
+    "id": "22-2267-145",
+    "name": "Jim Christian F. Ayco",
+    "course": "Bachelor of Science in Information Technology",
+    "solicitationAcquired": 5,
+    "solicitationReturned": 0,
+    "subscriptionStatus": "Not Subscribed"
+  },
+  {
+    "id": "22-2483-519",
+    "name": "Lyl S. Baligasa",
+    "course": "Bachelor of Science in Information Technology",
+    "solicitationAcquired": 5,
+    "solicitationReturned": 5,
+    "subscriptionStatus": "Subscribed"
+  },
+  {
+    "id": "22-1076-453",
+    "name": "John Eric G. Bayer",
+    "course": "Bachelor of Science in Computer Science",
+    "solicitationAcquired": 5,
+    "solicitationReturned": 5,
+    "subscriptionStatus": "Subscribed"
+  },
+  {
+    "id": "21-2775-903",
+    "name": "Mark Jason E. Cruz",
+    "course": "Bachelor of Science in Information Technology",
+    "solicitationAcquired": 3,
+    "solicitationReturned": 3,
+    "subscriptionStatus": "Subscribed"
+  },
+  {
+    "id": "22-1656-380",
+    "name": "Mike Lourence O. Damole",
+    "course": "Bachelor of Science in Computer Science",
+    "solicitationAcquired": 5,
+    "solicitationReturned": 2,
+    "subscriptionStatus": "Not Subscribed"
+  },
+  {
+    "id": "20-0307-132",
+    "name": "Clark Jim A. Gabiota",
+    "course": "Bachelor of Science in Computer Science",
+    "solicitationAcquired": 5,
+    "solicitationReturned": 5,
+    "subscriptionStatus": "Subscribed"
+  },
+  {
+    "id": "22-0958-473",
+    "name": "Edge G. Gonzaga",
+    "course": "Bachelor of Science in Computer Science",
+    "solicitationAcquired": 5,
+    "solicitationReturned": 5,
+    "subscriptionStatus": "Subscribed"
+  }
+]

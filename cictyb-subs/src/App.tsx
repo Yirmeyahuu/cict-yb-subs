@@ -1,5 +1,7 @@
 import { useEffect } from 'react'
+import { Routes, Route } from 'react-router-dom'
 import SubscriberList from './components/SubscriberList'
+import SolicitationList from './components/SolicitationList'
 import { Analytics } from "@vercel/analytics/react"
 import './styles/index.css'
 
@@ -38,7 +40,10 @@ function App() {
 
   return (
     <>
-      <SubscriberList />
+      <Routes>
+        <Route path="/" element={<SubscriberList />} />
+        <Route path="/solicitations" element={<SolicitationList />} />
+      </Routes>
       <Analytics />
     </>
   )

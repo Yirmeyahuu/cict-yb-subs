@@ -1,13 +1,13 @@
 import { useState, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { gsap } from 'gsap';
-import subscribersData from '../data/subscribers.json';
-import type { Subscriber } from '../types';
+import solicitationData from '../data/solicits.json';
+import type { Solicit } from '../types';
 
-const SubscriberList = () => {
-  const [subscribers] = useState<Subscriber[]>(subscribersData);
+const SolicitationList = () => {
+  const [solicits] = useState<Solicit[]>(solicitationData);
   const [searchQuery, setSearchQuery] = useState('');
-  const [filteredSubscribers, setFilteredSubscribers] = useState<Subscriber[]>([]);
+  const [filteredSolicits, setFilteredSolicits] = useState<Solicit[]>([]);
   const [isDarkMode, setIsDarkMode] = useState(true);
   const [currentPage, setCurrentPage] = useState(1);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -43,15 +43,15 @@ const SubscriberList = () => {
   }, []);
 
   useEffect(() => {
-    const filtered = subscribers
-      .filter((subscriber) =>
-        subscriber.name.toLowerCase().includes(searchQuery.toLowerCase())
+    const filtered = solicits
+      .filter((solicit) =>
+        solicit.name.toLowerCase().includes(searchQuery.toLowerCase())
       )
       .sort((a, b) => a.name.localeCompare(b.name));
     
-    setFilteredSubscribers(filtered);
-    setCurrentPage(1); // Reset to page 1 on new search
-  }, [searchQuery, subscribers]);
+    setFilteredSolicits(filtered);
+    setCurrentPage(1);
+  }, [searchQuery, solicits]);
 
   const highlightText = (text: string, query: string) => {
     if (!query) return text;
@@ -100,8 +100,8 @@ const SubscriberList = () => {
 
   const currentTheme = isDarkMode ? theme.dark : theme.light;
 
-  const totalPages = Math.ceil(filteredSubscribers.length / ITEMS_PER_PAGE);
-  const paginatedSubscribers = filteredSubscribers.slice(
+  const totalPages = Math.ceil(filteredSolicits.length / ITEMS_PER_PAGE);
+  const paginatedSolicits = filteredSolicits.slice(
     (currentPage - 1) * ITEMS_PER_PAGE,
     currentPage * ITEMS_PER_PAGE
   );
@@ -114,7 +114,7 @@ const SubscriberList = () => {
           {/* Mobile Menu Toggle */}
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="md:hidden p-2 cursor-pointer rounded-lg transition-all duration-200"
+            className="md:hidden cursor-pointer p-2 rounded-lg transition-all duration-200"
             aria-label="Toggle menu"
           >
             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" style={{ color: currentTheme.text.includes('white') ? '#ffffff' : '#000000' }}>
@@ -128,10 +128,10 @@ const SubscriberList = () => {
 
           {/* Desktop Navigation Link */}
           <button
-            onClick={() => navigate('/solicitations')}
+            onClick={() => navigate('/')}
             className={`hidden md:block font-medium transition-all duration-200 hover:opacity-80 border-b-2 border-transparent hover:border-rose-400 pb-1 ${currentTheme.text}`}
           >
-            View Solicitations
+            View Subscribers
           </button>
           
           {/* Theme Toggle */}
@@ -184,22 +184,22 @@ const SubscriberList = () => {
           >
             <button
               onClick={() => {
-                navigate('/solicitations');
+                navigate('/');
                 setIsMenuOpen(false);
               }}
               className={`text-sm font-medium transition-all duration-200 hover:opacity-80 border-b cursor-pointer border-transparent hover:border-rose-400 pb-1 ${currentTheme.text}`}
             >
-              View Solicitations
+              View Subscribers
             </button>
           </div>
         )}
 
         <div ref={headerRef} className="text-center mb-8">
           <h1 className={`text-5xl sm:text-6xl font-bold mb-4 tracking-tight ${currentTheme.text}`}>
-            CICT Yearbook Subscribers
+            Solicitation List
           </h1>
           <p className={`text-lg ${currentTheme.textSecondary}`}>
-            Total Subscribers: <span className="font-semibold text-rose-400">{subscribers.length}</span>
+            Total Students: <span className="font-semibold text-rose-400">{solicits.length}</span>
           </p>
         </div>
 
@@ -217,7 +217,7 @@ const SubscriberList = () => {
         </div>
 
         <div ref={tableRef}>
-          {paginatedSubscribers.length > 0 ? (
+          {paginatedSolicits.length > 0 ? (
             <>
               {/* Desktop Table View */}
               <div className="hidden md:block overflow-x-auto rounded-2xl border" style={{ borderColor: currentTheme.tableBorder }}>
@@ -227,21 +227,29 @@ const SubscriberList = () => {
                       <th className={`px-6 py-4 text-left text-xs font-semibold uppercase tracking-wider ${currentTheme.textSecondary}`}>ID</th>
                       <th className={`px-6 py-4 text-left text-xs font-semibold uppercase tracking-wider ${currentTheme.textSecondary}`}>Name</th>
                       <th className={`px-6 py-4 text-left text-xs font-semibold uppercase tracking-wider ${currentTheme.textSecondary}`}>Course</th>
-                      <th className={`px-6 py-4 text-left text-xs font-semibold uppercase tracking-wider ${currentTheme.textSecondary}`}>Year Level</th>
+                      <th className={`px-6 py-4 text-left text-xs font-semibold uppercase tracking-wider ${currentTheme.textSecondary}`}>Acquired</th>
+                      <th className={`px-6 py-4 text-left text-xs font-semibold uppercase tracking-wider ${currentTheme.textSecondary}`}>Returned</th>
+                      <th className={`px-6 py-4 text-left text-xs font-semibold uppercase tracking-wider ${currentTheme.textSecondary}`}>Status</th>
                     </tr>
                   </thead>
                   <tbody className="divide-y" style={{ backgroundColor: currentTheme.tableBg, borderColor: currentTheme.tableBorder }}>
-                    {paginatedSubscribers.map((subscriber) => (
+                    {paginatedSolicits.map((solicit) => (
                       <tr
-                        key={subscriber.id}
+                        key={solicit.id}
                         className="transition-colors duration-200"
                         onMouseEnter={(e) => e.currentTarget.style.backgroundColor = currentTheme.hoverBg}
                         onMouseLeave={(e) => e.currentTarget.style.backgroundColor = 'transparent'}
                       >
-                        <td className={`px-6 py-4 whitespace-nowrap text-sm ${currentTheme.textSecondary}`}>{subscriber.id}</td>
-                        <td className={`px-6 py-4 whitespace-nowrap text-sm font-medium ${currentTheme.text}`}>{highlightText(subscriber.name, searchQuery)}</td>
-                        <td className="px-6 py-4 whitespace-nowrap text-sm text-rose-400">{subscriber.course}</td>
-                        <td className={`px-6 py-4 whitespace-nowrap text-sm ${currentTheme.textSecondary}`}>{subscriber.yearLevel}</td>
+                        <td className={`px-6 py-4 whitespace-nowrap text-sm ${currentTheme.textSecondary}`}>{solicit.id}</td>
+                        <td className={`px-6 py-4 whitespace-nowrap text-sm font-medium ${currentTheme.text}`}>{highlightText(solicit.name, searchQuery)}</td>
+                        <td className="px-6 py-4 whitespace-nowrap text-sm text-rose-400">{solicit.course}</td>
+                        <td className={`px-6 py-4 whitespace-nowrap text-sm ${currentTheme.textSecondary}`}>{solicit.solicitationAcquired}</td>
+                        <td className={`px-6 py-4 whitespace-nowrap text-sm ${currentTheme.textSecondary}`}>{solicit.solicitationReturned}</td>
+                        <td className={`px-6 py-4 whitespace-nowrap text-sm`}>
+                          <span className={`px-2.5 py-1 text-xs font-semibold rounded-full ${solicit.subscriptionStatus === 'Subscribed' ? 'bg-green-500/20 text-green-400' : 'bg-red-500/20 text-red-400'}`}>
+                            {solicit.subscriptionStatus}
+                          </span>
+                        </td>
                       </tr>
                     ))}
                   </tbody>
@@ -250,9 +258,9 @@ const SubscriberList = () => {
 
               {/* Mobile Card View */}
               <div className="md:hidden space-y-4">
-                {paginatedSubscribers.map((subscriber) => (
+                {paginatedSolicits.map((solicit) => (
                   <div
-                    key={subscriber.id}
+                    key={solicit.id}
                     className="border rounded-2xl p-6 transition-all duration-300"
                     style={{ background: currentTheme.cardBg, borderColor: currentTheme.cardBorder }}
                     onMouseEnter={(e) => e.currentTarget.style.borderColor = '#ef4444'}
@@ -260,13 +268,19 @@ const SubscriberList = () => {
                   >
                     <div className="flex items-start justify-between mb-4">
                       <div className="flex-1">
-                        <h3 className={`text-lg font-semibold mb-1 ${currentTheme.text}`}>{highlightText(subscriber.name, searchQuery)}</h3>
-                        <p className={`text-xs ${currentTheme.textTertiary}`}>ID: {subscriber.id}</p>
+                        <h3 className={`text-lg font-semibold mb-1 ${currentTheme.text}`}>{highlightText(solicit.name, searchQuery)}</h3>
+                        <p className={`text-xs ${currentTheme.textTertiary}`}>ID: {solicit.id}</p>
                       </div>
+                      <span className={`px-2.5 py-1 text-xs font-semibold rounded-full ${solicit.subscriptionStatus === 'Subscribed' ? 'bg-green-500/20 text-green-400' : 'bg-red-500/20 text-red-400'}`}>
+                        {solicit.subscriptionStatus}
+                      </span>
                     </div>
                     <div className="space-y-2">
-                      <div className="flex items-center"><span className="w-2 h-2 bg-rose-400 rounded-full mr-2"></span><span className="text-sm text-rose-400 font-medium">{subscriber.course}</span></div>
-                      <div className="flex items-center"><span className="w-2 h-2 bg-gray-400 rounded-full mr-2"></span><span className={`text-sm ${currentTheme.textSecondary}`}>{subscriber.yearLevel}</span></div>
+                      <div className="flex items-center"><span className="w-2 h-2 bg-rose-400 rounded-full mr-2"></span><span className="text-sm text-rose-400 font-medium">{solicit.course}</span></div>
+                      <div className="flex items-center justify-between">
+                        <div className="flex items-center"><span className="w-2 h-2 bg-blue-400 rounded-full mr-2"></span><span className={`text-sm ${currentTheme.textSecondary}`}>Acquired: {solicit.solicitationAcquired}</span></div>
+                        <div className="flex items-center"><span className="w-2 h-2 bg-purple-400 rounded-full mr-2"></span><span className={`text-sm ${currentTheme.textSecondary}`}>Returned: {solicit.solicitationReturned}</span></div>
+                      </div>
                     </div>
                   </div>
                 ))}
@@ -274,7 +288,7 @@ const SubscriberList = () => {
             </>
           ) : (
             <div className="text-center py-12">
-              <p className={`text-xl ${currentTheme.textTertiary}`}>No subscribers found matching your search.</p>
+              <p className={`text-xl ${currentTheme.textTertiary}`}>No students found matching your search.</p>
             </div>
           )}
         </div>
@@ -373,4 +387,4 @@ const SubscriberList = () => {
   );
 };
 
-export default SubscriberList;
+export default SolicitationList;
