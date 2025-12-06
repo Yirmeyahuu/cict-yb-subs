@@ -50,7 +50,7 @@
     "course": "Bachelor of Science in Computer Science",
     "trackingNumbers": [2727, 2728],
     "solicitationAcquired": 2,
-    "solicitationReturned": 0,
+    "solicitationReturned": 2,
     "subscriptionStatus": "Subscribed"
   },
   {
@@ -59,7 +59,7 @@
     "course": "Bachelor of Science in Information Technology",
     "trackingNumbers": [2746],
     "solicitationAcquired": 1,
-    "solicitationReturned": 0,
+    "solicitationReturned": 1,
     "subscriptionStatus": "Subscribed"
   },
   {
@@ -113,7 +113,7 @@
     "course": "Bachelor of Science in Information Technology",
     "trackingNumbers": [2739],
     "solicitationAcquired": 1,
-    "solicitationReturned": 0,
+    "solicitationReturned": 1,
     "subscriptionStatus": "Subscribed"
   },
   {
@@ -131,7 +131,7 @@
     "course": "Bachelor of Science in Information Technology",
     "trackingNumbers": [2801, 2802],
     "solicitationAcquired": 2,
-    "solicitationReturned": 0,
+    "solicitationReturned": 2,
     "subscriptionStatus": "Subscribed"
   },
   {
@@ -226,7 +226,7 @@
     "course": "Bachelor of Science in Information Technology",
     "trackingNumbers": [2821],
     "solicitationAcquired": 1,
-    "solicitationReturned": 0,
+    "solicitationReturned": 1,
     "subscriptionStatus": "Subscribed"
   },
 
@@ -399,14 +399,13 @@
     "solicitationReturned": 1,
     "subscriptionStatus": "Subscribed"
   },
-
   {
     "id": "22-3201-954",
     "name": "Bhea Nathalie L. Parreñas",
     "course": "Bachelor of Science in Information Technology",
     "trackingNumbers": [2803, 2804],
     "solicitationAcquired": 2,
-    "solicitationReturned": 0,
+    "solicitationReturned": 2,
     "subscriptionStatus": "Subscribed"
   },
 
@@ -436,7 +435,7 @@
     "course": "Bachelor of Science in Information Technology",
     "trackingNumbers": [2769, 2770],
     "solicitationAcquired": 2,
-    "solicitationReturned": 1,
+    "solicitationReturned": 2,
     "subscriptionStatus": "Subscribed"
   },
 
@@ -496,7 +495,7 @@
     "course": "Bachelor of Science in Information Technology",
     "trackingNumbers": [2781, 2782],
     "solicitationAcquired": 2,
-    "solicitationReturned": 0,
+    "solicitationReturned": 2,
     "subscriptionStatus": "Subscribed"
   },
 
@@ -547,6 +546,15 @@
     "trackingNumbers": [3471, 3470],
     "solicitationAcquired": 2,
     "solicitationReturned": 0,
+    "subscriptionStatus": "Subscribed"
+  },
+  {
+    "id": "22-1656-380",
+    "name": "Mike Lourence O. Damole",
+    "course": "Bachelor of Science in Computer Science",
+    "trackingNumbers": [2777, 2778],
+    "solicitationAcquired": 2,
+    "solicitationReturned": 2,
     "subscriptionStatus": "Subscribed"
   }
 ]
