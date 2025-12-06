@@ -203,7 +203,7 @@ const SubscriberList = () => {
           {/* Desktop Navigation Link */}
           <button
             onClick={() => navigate('/solicitations')}
-            className={`hidden cursor-pointer md:block font-medium transition-all duration-200 hover:opacity-80 border-b-2 border-transparent hover:border-rose-400 pb-1 ${currentTheme.text}`}
+            className={`hidden cursor-pointer md:block font-medium transition-all duration-200 hover:opacity-80 border-b-2 border-transparent italic hover:border-rose-400 pb-1 ${currentTheme.text}`}
           >
             View Solicitations
           </button>
@@ -261,7 +261,7 @@ const SubscriberList = () => {
                 navigate('/solicitations');
                 setIsMenuOpen(false);
               }}
-              className={`text-sm font-medium transition-all duration-200 hover:opacity-80 border-b cursor-pointer border-transparent hover:border-rose-400 pb-1 ${currentTheme.text}`}
+              className={`text-sm font-medium transition-all duration-200 hover:opacity-80 border-b cursor-pointer border-transparent hover:border-rose-400 italic pb-1 ${currentTheme.text}`}
             >
               View Solicitations
             </button>
