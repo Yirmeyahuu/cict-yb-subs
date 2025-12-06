@@ -11,6 +11,7 @@ const SolicitationList = () => {
   const [isDarkMode, setIsDarkMode] = useState(true);
   const [currentPage, setCurrentPage] = useState(1);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [statusFilter, setStatusFilter] = useState<'All' | 'Subscribed' | 'Not Subscribed'>('All');
   const headerRef = useRef<HTMLDivElement>(null);
   const searchRef = useRef<HTMLDivElement>(null);
   const tableRef = useRef<HTMLDivElement>(null);
@@ -43,15 +44,21 @@ const SolicitationList = () => {
   }, []);
 
   useEffect(() => {
-    const filtered = solicits
-      .filter((solicit) =>
-        solicit.name.toLowerCase().includes(searchQuery.toLowerCase())
-      )
-      .sort((a, b) => a.name.localeCompare(b.name));
+    let filtered = solicits.filter((solicit) =>
+      solicit.name.toLowerCase().includes(searchQuery.toLowerCase())
+    );
+
+    // Apply status filter
+    if (statusFilter !== 'All') {
+      filtered = filtered.filter((solicit) => solicit.subscriptionStatus === statusFilter);
+    }
+
+    // Sort by name
+    filtered = filtered.sort((a, b) => a.name.localeCompare(b.name));
     
     setFilteredSolicits(filtered);
     setCurrentPage(1);
-  }, [searchQuery, solicits]);
+  }, [searchQuery, statusFilter, solicits]);
 
   // Calculate total solicitation letters acquired
   const totalAcquired = solicits.reduce((sum, solicit) => {
@@ -60,6 +67,10 @@ const SolicitationList = () => {
       : solicit.solicitationAcquired;
     return sum + acquired;
   }, 0);
+
+  // Calculate counts for each status
+  const subscribedCount = solicits.filter(s => s.subscriptionStatus === 'Subscribed').length;
+  const notSubscribedCount = solicits.filter(s => s.subscriptionStatus === 'Not Subscribed').length;
 
   const highlightText = (text: string, query: string) => {
     if (!query) return text;
@@ -88,7 +99,10 @@ const SolicitationList = () => {
       cardBorder: '#2a2a2a',
       text: 'text-white',
       textSecondary: 'text-gray-400',
-      textTertiary: 'text-gray-500'
+      textTertiary: 'text-gray-500',
+      filterBg: '#1a1a1a',
+      filterBorder: '#2a2a2a',
+      filterHover: '#252525'
     },
     light: {
       bg: '#F9F8F6',
@@ -102,7 +116,10 @@ const SolicitationList = () => {
       cardBorder: '#dee2e6',
       text: 'text-gray-900',
       textSecondary: 'text-gray-600',
-      textTertiary: 'text-gray-500'
+      textTertiary: 'text-gray-500',
+      filterBg: '#ffffff',
+      filterBorder: '#dee2e6',
+      filterHover: '#f8f9fa'
     }
   };
 
@@ -218,15 +235,70 @@ const SolicitationList = () => {
         </div>
 
         <div ref={searchRef} className="mb-10">
-          <div className="max-w-2xl mx-auto">
-            <input
-              type="text"
-              placeholder="Search by name..."
-              value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
-              className={`w-full px-6 py-4 text-lg rounded-2xl border-2 placeholder-gray-500 focus:border-rose-500 focus:outline-none focus:ring-2 focus:ring-rose-500/20 transition-all shadow-2xl ${currentTheme.text}`}
-              style={{ backgroundColor: currentTheme.inputBg, borderColor: currentTheme.inputBorder }}
-            />
+          <div className="max-w-4xl mx-auto">
+            {/* Search and Filter Container */}
+            <div className="flex flex-col md:flex-row gap-4">
+              {/* Search Input */}
+              <div className="flex-1">
+                <input
+                  type="text"
+                  placeholder="Search by name..."
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                  className={`w-full px-6 py-4 text-lg rounded-2xl border-2 placeholder-gray-500 focus:border-rose-500 focus:outline-none focus:ring-2 focus:ring-rose-500/20 transition-all shadow-2xl ${currentTheme.text}`}
+                  style={{ backgroundColor: currentTheme.inputBg, borderColor: currentTheme.inputBorder }}
+                />
+              </div>
+
+              {/* Status Filter Dropdown */}
+              <div className="md:w-64">
+                <div className="relative">
+                  <select
+                    value={statusFilter}
+                    onChange={(e) => setStatusFilter(e.target.value as 'All' | 'Subscribed' | 'Not Subscribed')}
+                    className={`w-full px-6 py-4 text-lg rounded-2xl border-2 focus:border-rose-500 focus:outline-none focus:ring-2 focus:ring-rose-500/20 transition-all shadow-2xl appearance-none cursor-pointer ${currentTheme.text}`}
+                    style={{ 
+                      backgroundColor: currentTheme.filterBg, 
+                      borderColor: currentTheme.inputBorder 
+                    }}
+                  >
+                    <option value="All">All Students ({solicits.length})</option>
+                    <option value="Subscribed">Subscribed ({subscribedCount})</option>
+                    <option value="Not Subscribed">Not Subscribed ({notSubscribedCount})</option>
+                  </select>
+                  <div className="absolute inset-y-0 right-0 flex items-center px-4 pointer-events-none">
+                    <svg className={`w-5 h-5 ${currentTheme.textSecondary}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Active Filter Badge */}
+            {statusFilter !== 'All' && (
+              <div className="flex items-center gap-2 mt-4">
+                <span className={`text-sm ${currentTheme.textSecondary}`}>Active filter:</span>
+                <span 
+                  className={`inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-sm font-medium ${
+                    statusFilter === 'Subscribed' 
+                      ? 'bg-green-500/20 text-green-400' 
+                      : 'bg-red-500/20 text-red-400'
+                  }`}
+                >
+                  {statusFilter}
+                  <button
+                    onClick={() => setStatusFilter('All')}
+                    className="hover:opacity-70 transition-opacity cursor-pointer"
+                    aria-label="Clear filter"
+                  >
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                  </button>
+                </span>
+              </div>
+            )}
           </div>
         </div>
 
@@ -331,7 +403,11 @@ const SolicitationList = () => {
             </>
           ) : (
             <div className="text-center py-12">
-              <p className={`text-xl ${currentTheme.textTertiary}`}>No students found matching your search.</p>
+              <p className={`text-xl ${currentTheme.textTertiary}`}>
+                {statusFilter !== 'All' 
+                  ? `No ${statusFilter.toLowerCase()} students found${searchQuery ? ' matching your search' : ''}.`
+                  : 'No students found matching your search.'}
+              </p>
             </div>
           )}
         </div>
