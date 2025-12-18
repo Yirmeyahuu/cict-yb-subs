@@ -316,7 +316,7 @@
     "course": "Bachelor of Science in Information Technology",
     "trackingNumbers": [2772, 2771, 2773],
     "solicitationAcquired": 3,
-    "solicitationReturned": 0,
+    "solicitationReturned": 3,
     "subscriptionStatus": "Subscribed"
   },
 
@@ -326,7 +326,7 @@
     "course": "Bachelor of Science in Information Technology",
     "trackingNumbers": [2749, 2750],
     "solicitationAcquired": 2,
-    "solicitationReturned": 0,
+    "solicitationReturned": 2,
     "subscriptionStatus": "Subscribed"
   },
 
